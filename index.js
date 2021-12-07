@@ -11,9 +11,13 @@ const users = [
     {id:3, name:'Akkas', phone: '01716233854'},
     {id:4, name:'Kamalika', phone: '01716233854'},
 ]
+
 app.get('/users',(req,res)=>{
+    const search = req.query.search;
+    console.log(search)
     res.send(users)
 })
+
 app.get('/users/:id', (req,res)=>{
     const id = req.params.id
     const user = users[id]
